@@ -17,7 +17,8 @@ propertyId(id){}
 int main()
 {
  HouseForSale h1(1);
- HouseForSale h2(h1); //Error!! Inherting from noncopyable disallows copy constructing and assigning.
+ //Error!! Inherting from noncopyable disallows copy constructing and assigning.
+ //HouseForSale h2(h1); 
 }
 
 /* Related Topics:
