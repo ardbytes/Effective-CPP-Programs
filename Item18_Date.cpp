@@ -8,7 +8,27 @@ struct Day {
 	int val;
 };
 
-struct Month {
+class Month 
+{
+public:
+
+	static Month Jan() { return Month(1); }
+	static Month Feb() { return Month(2); }
+	static Month Mar() { return Month(3); }
+	static Month Apr() { return Month(4); }
+	static Month May() { return Month(5); }
+	static Month Jun() { return Month(6); }
+	static Month Jul() { return Month(7); }
+	static Month Aug() { return Month(8); }
+	static Month Sep() { return Month(9); }
+	static Month Oct() { return Month(10); }
+	static Month Nov() { return Month(11); }
+	static Month Dec() { return Month(12); }
+	
+	int getVal () {return val;}
+	
+private:	
+	
 	explicit Month (int m):
 			val(m){}
 	int val;
@@ -39,12 +59,12 @@ class Date
 
 void Date::ToString( )
 {
- cout << iDay.val << "/" <<iMonth.val << "/" << iYear.val << endl;
+ cout << iDay.val << "/" <<iMonth.getVal() << "/" << iYear.val << endl;
 }
 
 int main ( )
 {
- Date d ( Month(1), Day(1), Year(2010));
+ Date d ( Month::Jul(), Day(12), Year(1984));
  d.ToString();
 }
 
