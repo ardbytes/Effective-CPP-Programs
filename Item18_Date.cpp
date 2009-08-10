@@ -68,3 +68,12 @@ int main ( )
  d.ToString();
 }
 
+/*
+ Notes:
+ 
+ a). tr1::shared_ptr has a deleter feature that is not present in auto_ptr.
+ 
+ b). tr1::shared_ptr eliminates "cross-DLL problem".
+ 
+ */
+
