@@ -88,7 +88,9 @@ void callWithMax(const T& a, const T& b)
 
 int main()
 {
- int a = 10 , b = 20;
+ int a,b;
+ cin >> a;
+ cin >> b;
  callWithMax (a,b);
 }
 
