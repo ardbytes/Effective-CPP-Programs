@@ -1,3 +1,5 @@
+//Item 25: Consider support for a non-throwing swap
+
 #include <algorithm>
 #include <iostream>
 using namespace std;
@@ -10,30 +12,15 @@ class Rational
 	int Numerator() const { return iNumerator; }
 	int Denominator() const { return iDenominator; }
 	
-	Rational ( Rational& rhs );
-	
-//	  Rational operator*(const Rational& rhs);
-	
  private:
  	int iNumerator;
-	int iDenominator;	 
-		
+	int iDenominator;
 };
-/*
-Rational Rational::operator*(const Rational& rhs)
-{
- return Rational( this->Numerator() * rhs.Numerator(), this->Denominator() * rhs.Denominator() );
-}
-*/
 
 Rational operator*(const Rational& lhs, const Rational& rhs)
 {
- return Rational( lhs.Numerator() * rhs.Numerator(), lhs.Denominator() * rhs.Denominator() );
-}
-
-Rational::Rational ( Rational& rhs)
-{
- swap (*this, rhs);
+ Rational result( lhs.Numerator() * rhs.Numerator(), lhs.Denominator() * rhs.Denominator() );
+ return result;
 }
 
 int main()
@@ -43,7 +30,9 @@ int main()
  std::swap (a,b);
  cout << a << " " << b << endl;
  Rational aRational(3,2);
- Rational bRational(aRational);
+ Rational bRational(5,8);
+ std::swap(aRational,bRational);
+ cout << bRational.Numerator() << endl;
+ cout << aRational.Numerator() << endl;
 }
-
 
